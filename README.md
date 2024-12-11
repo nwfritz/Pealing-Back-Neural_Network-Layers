@@ -41,9 +41,52 @@ Importance of Interpretability:
 
 By leveraging methods like saliency maps, the study identifies genes critical to TLS prediction, contributing to the biological understanding of TLS formation.
 # Running the Notebook 
+This Notebook contains 9 different sections. It was built on Google Colab using the A-100 GPU. I suggest using Google Colab to run this notebook, mapping your own google Drive. It contains 9 sections.
 
+1. Getting Started: Downloading the necessary libraries to run the program
+2. Mount Google Drive: Connecting to Google Drive to access data and save results
+3. Download Data from Hugging Face and Save to Google Drive
+4. Display Sample Data and Visualize It
+5. Prepare Data for Training: Cleaning, and Visualizing
+6. Build the Models: Preparing Architecture 
+7. Prepare the Data to be Loaded into the Model
+8. Train the Model
+9. Analyze Results: Display key testing metrics
 # Data Analysis 
-
+To make predictions based on the genes expressed four different Fully Connected Neural Nets were created each with different architectures.
+## Simple_FCNN
+Description: A basic FCNN with three layers (input, hidden, and output).
+Structure:
+Input Layer: 17943 genes to 128 neurons.
+Hidden Layer: 128 to 64 neurons, with Dropout to prevent overfitting.
+Output Layer: 1 neuron (binary classification using Sigmoid).
+Key Feature: Simple and lightweight, designed for basic classification tasks with minimal computation.
+Use Case: Baseline performance model.
+## Deep_FCNN
+Description: A deeper and more complex FCNN with four layers and more neurons.
+Structure:
+Input Layer: 17943 genes to 256 neurons.
+Hidden Layers: 256 → 128 → 64 neurons, each followed by Dropout for regularization.
+Output Layer: 1 neuron (binary classification using Sigmoid).
+Key Feature: Increased depth and number of neurons for learning more complex patterns.
+Tradeoff: Higher computational cost and risk of overfitting compared to Simple_FCNN.
+Use Case: Ideal for exploring more complex relationships in the data.
+## BatchNorm_FCNN
+Description: Similar to Deep_FCNN but with Batch Normalization layers added after each hidden layer.
+Structure:
+Batch Normalization: Normalizes activations during training to stabilize learning.
+Hidden Layers: 256 → 128 → 64 neurons, each with Batch Normalization and Dropout.
+Key Feature: Batch Normalization improves convergence speed and reduces internal covariate shift, enhancing generalization.
+Tradeoff: Slightly more computational overhead.
+Use Case: Suitable when training instability is observed, or faster convergence is desired.
+## Residual_FCNN
+Description: Incorporates Residual Connections, where outputs from earlier layers are added to later layers, enabling identity mappings.
+Structure:
+Residual Connection: Adds the output of the first hidden layer (with adjustments for dimensions) to the second hidden layer.
+Hidden Layers: 256 → 128 → 64 neurons, with Dropout for regularization.
+Key Feature: Helps mitigate vanishing gradients in deeper networks and retains information from earlier layers.
+Tradeoff: Adds a bit of complexity to the architecture.
+Use Case: Useful for deeper networks where gradient issues or loss of information is a concern.
 # Results
 
 # Discussion
