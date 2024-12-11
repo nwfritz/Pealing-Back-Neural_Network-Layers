@@ -10,11 +10,17 @@ This project uses FCNNs to classify spatial transcriptomics regions as TLS+ or T
 # Data
 ![](https://github.com/user-attachments/assets/039425b3-6f2d-4303-9e5a-dcb43d07b55f)
 Data for this task was taken off the Hugging Face data set page. It is a small sub-section of the STimage-1K4M: A histopathology image-gene expression dataset for spatial transcriptomic (ST). Spatial transcriptomics is a cutting-edge technique that combines gene expression profiling with spatial localization, allowing researchers to study where specific genes are expressed within the architecture of a tissue. Although data was taken from an ST data set it was not utilized in this way. The data used came from Human Kidenies labeled GSE175540_GSM5924030, through GSE175540_GSM5924035. I downloaded the gene_expression and annotation CSV's for each of them. Each section of data represents a section of the same Human Kidney. The annotation CSV held the key to whether each section led to TLS+ or-. I merged these data sets to get one overarching data set which contained over 23,000 individual sections of data containing some variation of 17,943 genes that could have been expressed resulting in TLS+/-. 
+
 ![](<img width="747" alt="image" src="https://github.com/user-attachments/assets/4be88138-9474-4b92-9ff0-9060ed868f0a" />)
+
 The ratio of TLS to NO_TLS is 1:27
-![]<img width="399" alt="image" src="https://github.com/user-attachments/assets/5e1a60a6-d0d0-4b01-8039-4a72eb9a0682" />
+
+![](<img width="399" alt="image" src="https://github.com/user-attachments/assets/5e1a60a6-d0d0-4b01-8039-4a72eb9a0682" />)
+
 This data was cleaned for NaN and shuffled before being split into Training, Testing, and Validation sets. 
-![]<img width="500" alt="image" src="https://github.com/user-attachments/assets/64b12dcc-718f-423f-a9e2-2a4ee46bfb6f" />
+
+![](<img width="500" alt="image" src="https://github.com/user-attachments/assets/64b12dcc-718f-423f-a9e2-2a4ee46bfb6f" />)
+
 # Fully Connected Neural Networks
 Fully Connected Neural Networks (FCNNs) are a class of deep learning models well-suited for high-dimensional data like gene expression profiles. FCNNs consist of layers of neurons where every neuron in one layer is connected to every neuron in the next. They are particularly effective in learning complex, non-linear relationships in data, making them a valuable tool for tasks such as TLS classification.
 
