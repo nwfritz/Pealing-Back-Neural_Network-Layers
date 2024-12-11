@@ -1,0 +1,42 @@
+## To run this notebook you will need...
+
+Python Version 3.10
+Acess to a GPU (I suggest using google Colab)
+
+Necessary Imports 
+# Data Handling and Manipulation
+import os  # For file and directory operations
+import numpy as np  # For numerical computations
+import pandas as pd  # For data manipulation and analysis
+
+# Data Visualization
+import matplotlib.pyplot as plt  # For creating plots and visualizations
+
+# Data Preprocessing
+from sklearn.preprocessing import StandardScaler  # For feature scaling
+from sklearn.model_selection import train_test_split  # For splitting data into train, test, and validation sets
+
+# Machine Learning Metrics
+from sklearn.metrics import (
+    r2_score,           # To calculate R² score
+    accuracy_score,     # To calculate accuracy
+    precision_score,    # To calculate precision
+    recall_score,       # To calculate recall
+    f1_score,           # To calculate F1 score
+    roc_auc_score,      # To calculate ROC-AUC score
+    confusion_matrix,   # To create a confusion matrix
+    ConfusionMatrixDisplay  # To display a confusion matrix
+)
+
+# PyTorch (Deep Learning Framework)
+import torch  # Core PyTorch library
+import torch.nn as nn  # For defining neural network layers
+import torch.optim as optim  # For optimization algorithms
+from torch.utils.data import DataLoader, TensorDataset, random_split  # For data loading and handling in PyTorch
+
+# Google Colab (if applicable)
+from google.colab import drive  # For mounting Google Drive in Colab
+
+# Networking (optional, if fetching data online)
+import requests  # For HTTP requests to fetch data
+from io import StringIO  # For handling in-memory text streams
