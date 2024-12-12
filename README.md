@@ -88,7 +88,19 @@ Key Feature: Helps mitigate vanishing gradients in deeper networks and retains i
 Tradeoff: Adds a bit of complexity to the architecture.
 Use Case: Useful for deeper networks where gradient issues or loss of information is a concern.
 # Results
+Each model was separately used to analyze the data to get an idea of the differences each model picked up. Overall each model performed at around 96%. Which is decent, but mostly because almost all of the data set was TLS-. For each model the Loss, R-Score, and Accuracy for each Epoch was found. The best-performing epoch for each model was determined by finding the smallest Training loss. All results can be seen in the Result_Graphs folder within this GitHub. The key results are summarized in the table bellow.
+<img width="737" alt="image" src="https://github.com/user-attachments/assets/089a63b1-fd5f-4696-8c4f-4b7ac864dfd5" />
 
+Metrics were calculated based on the best model for each type of FCNN. They were:
+Accuracy: The proportion of correctly classified samples out of the total number of samples.
+Precision: The proportion of correctly predicted positive samples out of all samples predicted as positive.
+Recall (Sensitivity or True Positive Rate): The proportion of actual positive samples that were correctly predicted as positive.
+F1 Score: The harmonic mean of precision and recall, providing a single metric that balances both.
+ROC-AUC (Receiver Operating Characteristic - Area Under the Curve): The area under the ROC curve, which plots the True Positive Rate (TPR or Recall) against the False Positive Rate (FPR).
+
+Confusion matrices for all models were created to show the rates of correct classification. They showed a critical issue. True positives (TLS+) are underrepresented.
+
+Saliency Maps were created to highlight the important genes for classifying TLS+ or TLS-. There were key genes that were used to help classify both TLS+ and TLS-, but the rate of expression could have a greater impact.
 # Discussion
 
 # Conclusion 
