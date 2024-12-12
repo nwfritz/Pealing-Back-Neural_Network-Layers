@@ -2,7 +2,7 @@
 Investigating Tertiary Lymphoid Structures (TLS) and Their Genetic Signatures Using Fully Connected Neural Networks (FCNNs)
 
 # Project Overview 
-Tertiary lymphoid structures (TLS) are organized aggregates of immune cells that form in non-lymphoid tissues during chronic inflammation, infection, or cancer. Unlike primary and secondary lymphoid organs, TLS develop in situ, often within tumor microenvironments, and are associated with improved outcomes in cancer immunotherapy. Their formation and function are driven by specific molecular signals and gene expression patterns, making them valuable biomarkers for disease progression and therapeutic response.
+Tertiary lymphoid structures (TLS) are organized aggregates of immune cells that form in non-lymphoid tissues during chronic inflammation, infection, or cancer. Unlike primary and secondary lymphoid organs, TLS develops in situ, often within tumor microenvironments, and is associated with improved outcomes in cancer immunotherapy. Their formation and function are driven by specific molecular signals and gene expression patterns, making them valuable biomarkers for disease progression and therapeutic response.
 
 Gene expression profiling offers a powerful way to understand TLS by identifying key genes and pathways involved in their formation and anti-tumor immune interactions. However, the high dimensionality of these datasets presents challenges, necessitating advanced computational methods. Fully Connected Neural Networks (FCNNs) are well-suited for this task, as they excel at learning complex, non-linear relationships in high-dimensional data.
 
@@ -156,9 +156,23 @@ Lowest recall and F1 score for TLS+, indicating limited ability to generalize ac
 Best overall performance with the highest recall, F1 score, and ROC-AUC. Captures nuanced features.
 ##### Weaknesses
 Slightly lower TLS- accuracy, possibly due to a focus on learning complex TLS+ patterns.
+## Past Work 
+Based on past work done when exploring gene expression related to Tertiary Lymphoid Structures, the key has been to focus of genes that are expressed within the immune system. Especially infiltration with cells like B-Cells and CD8+ T-Cells. TLS are structures within tumors that promote ant-tumor immune responses so genes like CD19 (B-cell marker), CD8A (cytotoxic T-cell marker), CD79A (activated B-cell marker), and immunoglobulin genes (IGJ, IGKC) are often significantly upregulated in tumors with TLS present, indicating a strong immune response within the tumor microenvironment(Solis, 2023). What I found within my work did not greatly match up with these findings. I attribute that greatly to the data discrepancies between TLS+ and TLS-. However, my BatchNorm_FCNN model did highlight IGKC as the greatest indicator relating to TLS+ activation, but it was also a high indicator for TLS- activation.
+
 # Conclusion 
+In conclusion, this experiment provided a deeper understanding and learning opportunities for many things. This included PyTorch and FCNNs. I was able to write code for my own FCNN models and deepened my understanding of Neural Networks while learning about the intricacies and nuances that different types of FCNN models can bring. I learned about data sets and the importance of better split data, and how this will result in training biases in one direction over the other. Finally, I learned how to analyze key metrics to understand how each model did. Overall Deep_FCNN did the best as it was able to capture more complex relationships, making it the most effective model for TLS+ detection. 
+## Future Work and Next Steps
+##### Improving Recall 
+The low recall across models indicates that TLS+ regions are often misclassified as TLS-. To hopefully address this I would like to try using Weighted Loss Functions during training. Additionally gathering more data off the Huggin Face website while only keeping enough to balance out the Number of TLS+ and TLS- expressions would be helpful in training and balancing the dataset. 
+##### Gene Insights
+Repeated identification of genes like SLC6A3 (dopamine transport protein) suggests potential biological relevance. Future research could validate these genes experimentally to better understand their roles in TLS formation. Through current work, I could not find any relevance or connection to TLS.
+##### Future Model Enhancements
+Consider integrating spatial transcriptomics data into a Graph Neural Network (GNN), which can incorporate spatial relationships between TLS regions for better prediction.
+Explore ensemble learning by combining predictions from the best-performing models to balance TLS+ and TLS- predictions further.
 
 # Works Cited 
 https://arxiv.org/pdf/2406.06393
 https://huggingface.co/datasets/jiawennnn/STimage-1K4M/tree/main
 Chat GPT
+https://www.annalsofoncology.org/action/showPdf?pii=S0923-7534%2823%2902104-X
+https://pmc.ncbi.nlm.nih.gov/articles/PMC9871364/
