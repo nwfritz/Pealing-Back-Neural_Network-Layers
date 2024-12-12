@@ -115,7 +115,18 @@ Recall ranges from 0.2 to 0.43, highlighting the models' struggles to correctly 
 F1 score, balancing precision and recall, is highest for Deep_FCNN at 0.47, indicating its superior handling of TLS+ classification.
 #### ROC-AUC
 ROC-AUC is consistently high across models, with the Deep_FCNN achieving the highest at 0.97, indicating strong class separation overall.
-
+#### Key Takeaways
+While all models achieve similar accuracy, metrics like recall and F1 score reveal how Deep_FCNN handles TLS+ classification better than others.Residual_FCNN and BatchNorm_FCNN improve precision but do not significantly enhance recall, suggesting they focus more on reducing false positives for TLS+.
+## TLS+ and TLS- Gene Contribution Analysis
+#### TLS+ Contributions
+SLC6A3 consistently appears as a top contributor in Simple_FCNN, Residual_FCNN, and Deep_FCNN, underscoring its importance in identifying TLS+ regions.
+C12orf74 is a prominent contributor for both Simple_FCNN and Residual_FCNN, further emphasizing its relevance.
+#### TLS- Contributions
+SLC6A3 also contributes strongly to TLS-, suggesting that its role might be context-dependent, with differences in expression levels determining classification.
+Deep_FCNN highlights genes like ADIPOQ and FCRL1 for TLS-, showcasing its ability to identify diverse patterns compared to simpler models.
+#### Key Takeaways
+The overlap in genes like SLC6A3 and C12orf74 for both TLS+ and TLS- suggests that expression intensity or dynamics, rather than binary presence, might drive classification.
+Deep_FCNN identifies more unique genes for both TLS+ and TLS-, reflecting its capacity to learn nuanced relationships in the data.
 # Conclusion 
 
 # Works Cited 
