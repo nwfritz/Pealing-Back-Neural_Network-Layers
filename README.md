@@ -41,7 +41,7 @@ Importance of Interpretability:
 
 By leveraging methods like saliency maps, the study identifies genes critical to TLS prediction, contributing to the biological understanding of TLS formation.
 # Running the Notebook 
-This Notebook contains 9 different sections. It was built on Google Colab using the A-100 GPU. I suggest using Google Colab to run this notebook, mapping your own google Drive. It contains 9 sections.
+This Notebook contains 9 different sections. It was built on Google Colab using the A-100 GPU. I suggest using Google Colab to run this notebook, mapping your own Google Drive. It contains 9 sections.
 
 1. Getting Started: Downloading the necessary libraries to run the program
 2. Mount Google Drive: Connecting to Google Drive to access data and save results
@@ -49,7 +49,7 @@ This Notebook contains 9 different sections. It was built on Google Colab using 
 4. Display Sample Data and Visualize It
 5. Prepare Data for Training: Cleaning, and Visualizing
 6. Build the Models: Preparing Architecture 
-7. Prepare the Data to be Loaded into the Model
+7. Prepare the Data to be loaded into the Model
 8. Train the Model
 9. Analyze Results: Display key testing metrics
 # Data Analysis 
@@ -102,6 +102,19 @@ Confusion matrices for all models were created to show the rates of correct clas
 
 Saliency Maps were created to highlight the important genes for classifying TLS+ or TLS-. There were key genes that were used to help classify both TLS+ and TLS-, but the rate of expression could have a greater impact.
 # Discussion
+The four FCNN models all had an accuracy score of 97%. This sounds great but is extremely misleading due to the large disparities between TLS+ and TLS-. This ended up being detrimental to the effectiveness of the models, as there is clear signs of model bias towards the TLS- sections of the data, as well as overfitting in the TLS- direction. This is seen when looking at the number of correctly predicted TLS+/-. It was very effective at predicting TLS-, but was below 50% for all TLS+ predictions. Meaning it was almost always tailored to TLS- due to the greater amount of data in its favor with a couple of small indicators allowing essential coin flip to determine TLS+.
+
+## Performance Metric Analysis 
+#### Accuracy
+All models achieve a high accuracy of 0.97, indicating they classify the majority class (TLS-) correctly.
+#### Precision
+Precision ranges from 0.51 to 0.62, showing how well the models handle TLS+ predictions with fewer false positives. Residual_FCNN performs best in this regard.
+#### Recall
+Recall ranges from 0.2 to 0.43, highlighting the models' struggles to correctly identify TLS+ samples. Deep_FCNN achieves the highest recall.
+#### F1 Score
+F1 score, balancing precision and recall, is highest for Deep_FCNN at 0.47, indicating its superior handling of TLS+ classification.
+#### ROC-AUC
+ROC-AUC is consistently high across models, with the Deep_FCNN achieving the highest at 0.97, indicating strong class separation overall.
 
 # Conclusion 
 
