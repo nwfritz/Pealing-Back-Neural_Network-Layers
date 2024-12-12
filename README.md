@@ -171,7 +171,7 @@ Consider integrating spatial transcriptomics data into a Graph Neural Network (G
 Explore ensemble learning by combining predictions from the best-performing models to balance TLS+ and TLS- predictions further.
 
 # Works Cited 
-Chatgpt. (n.d.). https://chatgpt.com/ 
-Chen, J., Zhou, M., Wu, W., Zhang, J., Li, Y., & Li, D. (2024, June 20). Stimage-1K4M: A histopathology image-gene expression dataset for spatial transcriptomics. arXiv.org. https://arxiv.org/abs/2406.06393 
-Hou, Y., Qiao, S., Li, M., Han, X., Wei, X., Pang, Y., & Mao, H. (2023, January 10). The gene signature of tertiary lymphoid structures within ovarian cancer predicts the prognosis and immunotherapy benefit. Frontiers in genetics. https://pmc.ncbi.nlm.nih.gov/articles/PMC9871364/ 
-Solis, E. S. (n.d.). Https://www.annalsofoncology.org/action/showPdf?pi... Annals of Oncology. https://www.annalsofoncology.org/action/showPdf?pii=S0923-7534%2819%2945311-8 
+##### Chatgpt. (n.d.). https://chatgpt.com/ 
+##### Chen, J., Zhou, M., Wu, W., Zhang, J., Li, Y., & Li, D. (2024, June 20). Stimage-1K4M: A histopathology image-gene expression dataset for spatial transcriptomics. arXiv.org. https://arxiv.org/abs/2406.06393 
+##### Hou, Y., Qiao, S., Li, M., Han, X., Wei, X., Pang, Y., & Mao, H. (2023, January 10). The gene signature of tertiary lymphoid structures within ovarian cancer predicts the prognosis and immunotherapy benefit. Frontiers in genetics. https://pmc.ncbi.nlm.nih.gov/articles/PMC9871364/ 
+##### Solis, E. S. (n.d.). Https://www.annalsofoncology.org/action/showPdf?pi... Annals of Oncology. https://www.annalsofoncology.org/action/showPdf?pii=S0923-7534%2819%2945311-8 
