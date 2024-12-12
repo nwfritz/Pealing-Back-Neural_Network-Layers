@@ -127,6 +127,35 @@ Deep_FCNN highlights genes like ADIPOQ and FCRL1 for TLS-, showcasing its abilit
 #### Key Takeaways
 The overlap in genes like SLC6A3 and C12orf74 for both TLS+ and TLS- suggests that expression intensity or dynamics, rather than binary presence, might drive classification.
 Deep_FCNN identifies more unique genes for both TLS+ and TLS-, reflecting its capacity to learn nuanced relationships in the data.
+## Correct Predictions
+#### TLS+ Correct Predictions
+Simple_FCNN correctly predicts 35 TLS+ samples, while Deep_FCNN predicts the most at 53.
+#### TLS- Correct Predictions
+Residual_FCNN predicts TLS- most accurately, with 3308 correct predictions, followed by BatchNorm_FCNN.
+#### Key Takeaways and Call Backs
+Deep_FCNN strikes a better balance by improving TLS+ predictions (highest recall and F1 score) while maintaining acceptable TLS- accuracy.
+Models like BatchNorm_FCNN show strong TLS- performance but struggle with TLS+, leading to poor recall.
+## Overall Model Comparison 
+### Simple_FCNN
+##### Strengths
+High accuracy on this data set; easy to train and interpret.
+##### Weaknesses
+Poor recall (TLS+), indicating a strong bias toward TLS-.
+### Residual_FCNN
+##### Strengths
+Improves precision for TLS+ while maintaining high TLS- accuracy.
+##### Weaknesses
+Struggles to improve recall or generalization significantly.
+### BatchNorm_FCNN
+##### Strengths
+Stabilizes training with batch normalization; best TLS- predictions.
+##### Weaknesses
+Lowest recall and F1 score for TLS+, indicating limited ability to generalize across classes.
+### Deep_FCNN
+##### Strengths
+Best overall performance with the highest recall, F1 score, and ROC-AUC. Captures nuanced features.
+##### Weaknesses
+Slightly lower TLS- accuracy, possibly due to a focus on learning complex TLS+ patterns.
 # Conclusion 
 
 # Works Cited 
